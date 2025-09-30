@@ -13,19 +13,26 @@ typedef struct {
 
 /**
  * 创建字符串构建器
+ * 默认初始容量为16个字符
+ * @return 字符串构建器指针
  */
 string_builder_t* sb_create();
 /**
  * 创建指定初始容量的字符串构建器
+ * @param initial_capacity 初始容量，必须大于0
+ * @return 字符串构建器指针
  */
 string_builder_t* sb_create_with_capacity(size_t initial_capacity);
 /**
  * 创建并初始化为指定字符串的字符串构建器
+ * @param initial_str 初始字符串
+ * @return 字符串构建器指针
  */
 string_builder_t* sb_create_with_str(const char *initial_str);
 
 /**
  * 销毁字符串构建器，释放内存
+ * @param sb 需要销毁的字符串构建器
  */
 void sb_destory(string_builder_t *sb);
 
@@ -88,7 +95,7 @@ size_t sb_last_index_of(string_builder_t *sb, const char *str);
  * @param str 需要查找的字符串
  * @return 位置索引，找不到返回 -1
  */
-size_t sb_index_os(string_builder_t *sb, const char *str);
+size_t sb_index_of(string_builder_t *sb, const char *str);
 
 /**
  * 替换指定范围内的字符串
